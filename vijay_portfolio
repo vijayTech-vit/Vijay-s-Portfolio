@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Kumar Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: lightgreen;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            color: #333;
+        }
+        header {
+            background: #6a0572;
+            width: 100%;
+            padding: 20px 0;
+            color: white;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        nav {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        nav button {
+            padding: 20px 60px;
+            border: none;
+            border-radius: 15px;
+            background: skyblue;
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        nav button:nth-child(1) {
+            transform: translate(0px, 0px);
+        }
+        nav button:nth-child(2) {
+            transform: translate(40px, 40px);
+        }
+        nav button:nth-child(3) {
+            transform: translate(80px, 80px);
+        }
+        nav button:nth-child(4) {
+            transform: translate(120px, 120px);
+        }
+        nav button:nth-child(5) {
+            transform: translate(160px, 160px);
+        }
+        nav button:hover {
+            background: #87ceeb;
+            transform: scale(1.1);
+        }
+        section {
+            display: none;
+            margin: 20px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            width: 70%;
+            max-width: 900px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        a {
+            color: #6a0572;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <script>
+        function playSound() {
+            let audio = new Audio('https://www.soundjay.com/button/beep-07.wav');
+            audio.volume = 1.0;
+            audio.play();
+        }
+        function showSection(sectionId) {
+            let sections = document.querySelectorAll('section');
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+            playSound();
+        }
+    </script>
+</head>
+<body>
+<header>
+    Vijay Kumar Portfolio
+</header>
+<nav>
+    <button onclick="showSection('about')">About Me</button>
+    <button onclick="showSection('contact')">Contact</button>
+    <button onclick="showSection('social')">Social Links</button>
+    <button onclick="showSection('skills')">Skills</button>
+    <button onclick="showSection('projects')">Projects</button>
+</nav>
+<section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I am Vijay Kumar, a student at VIT AP, pursuing CSE AIML specialization.</p>
+</section>
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:vijaykumarusarthi@gmail.com">vijaykumarusarthi@gmail.com</a></p>
+    <p>College Email: <a href="mailto:vijay.23bce20004@vitapstudent.ac.in">vijay.23bce20004@vitapstudent.ac.in</a></p>
+    <p>Phone: 7981366265</p>
+</section>
+<section id="social">
+    <h2>Social Links</h2>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/vijay-kumar-8981912b9/" target="_blank">Vijay Kumar</a></p>
+</section>
+<section id="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>Python</li>
+        <li>Java</li>
+        <li>C</li>
+        <li>Basic DSA</li>
+        <li>Basic AI</li>
+    </ul>
+</section>
+<section id="projects">
+    <h2>Projects</h2>
+    <p>Online Ticket Booking System: A project that allows users to book tickets online with ease, implementing basic AI techniques for user interaction.</p>
+</section>
+</body>
+</html>
